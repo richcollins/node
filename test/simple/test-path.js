@@ -118,3 +118,11 @@ assert.equal(path.normalize("a//b//./c"), "a/b/c");
 assert.equal(path.normalize("a//b//.", true), "a//b/");
 assert.equal(path.normalize("a//b//."), "a/b");
 
+String.prototype.testJoin = function()
+{
+	assert.equal("a/b", path.join(this, "b"));
+}
+
+"a".testJoin();
+
+delete String.prototype.testJoin;
